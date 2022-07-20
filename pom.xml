@@ -28,7 +28,7 @@
 <distributionManagement>
   <repository>
     <id>releases</id>
-    <url>http://35.176.178.191:8081/nexus/content/repositories/releases</url>
+    <url>http://35.176.178.191:8081/repository/maven-releases/</url>
   </repository>
 </distributionManagement>
 </project>
