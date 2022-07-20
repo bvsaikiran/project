@@ -45,6 +45,8 @@ pipeline {
                 
                 sh "sudo cd /home/ansible"
                 
+                sh "sshpass -p 'ansible' scp /home/ansible/WebAppCal-1.3.6.war ansible@172.31.36.232:/home/ansible"
+                
                 
             }
         }
