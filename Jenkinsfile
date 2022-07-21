@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sshagent(['deploy_user']) {
                     
-                 sh "scp -o StrictHostKeyChecking=no  /First_Pipeline/target/WebAppCal-1.3.9.war ec2-user@172.31.36.232:/home/ec2-user/" 
+                 sh "scp -o StrictHostKeyChecking=no  First_Pipeline/target/WebAppCal-1.3.9.war ec2-user@172.31.36.232:/home/ec2-user/" 
     
                 }
             }
