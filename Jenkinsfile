@@ -39,6 +39,8 @@ pipeline {
         
            stage('Deploy') {
             steps {
+                
+                sh "sudo wget --user=admin --password=admin123 http://3.8.192.169:8081/repository/maven-releases/com/web/cal/WebAppCal/1.2.9/WebAppCal-1.2.9.war -P /home/ec2-user"
                 sshagent(['deploy_user']) {
                     
                  sh "scp -o StrictHostKeyChecking=no  **/*.war ec2-user@172.31.36.232:/home/ec2-user/apache-tomcat-8.5.81/webapps" 
