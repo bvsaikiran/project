@@ -4,7 +4,7 @@
   <groupId>com.web.cal</groupId>
   <artifactId>WebAppCal</artifactId>
   <packaging>war</packaging>
-  <version>1.2.9</version>
+  <version>1.2.8</version>
     <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -28,7 +28,7 @@
 <distributionManagement>
   <repository>
     <id>releases</id>
-    <url>http://3.8.192.169:8081/repository/maven-releases/</url>
+    <url>http://18.133.28.224:8081/repository/maven-releases/</url>
   </repository>
 </distributionManagement>
 </project>
