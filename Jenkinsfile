@@ -24,7 +24,7 @@ pipeline {
  
         stage('Sonar') {
             steps {
-                sh "mvn sonar:sonar -Dsonar.host.url=http://13.41.77.92:9000 -Dsonar.login=3f93384c6a8b7d9f9e321dbe416407f2357e8656"
+                sh "mvn sonar:sonar -Dsonar.host.url=http://13.41.222.67:9000 -Dsonar.login=3f93384c6a8b7d9f9e321dbe416407f2357e8656"
             }
         }
 
@@ -41,11 +41,18 @@ pipeline {
             steps {
                 
                 sh "sudo wget --user=admin --password=admin123 http://3.8.192.169:8081/repository/maven-releases/com/web/cal/WebAppCal/1.2.9/WebAppCal-1.2.9.war -P /home/ec2-user"
-                sshagent(['deploy_user']) {
+      
+                //sshagent(['deploy_user']) {
                     
-                 sh "scp -o StrictHostKeyChecking=no  **/*.war ec2-user@172.31.36.232:/home/ec2-user/apache-tomcat-8.5.81/webapps" 
+                 // sh "scp -o StrictHostKeyChecking=no  **/*.war ec2-user@172.31.36.232:/home/ec2-user/apache-tomcat-8.5.81/webapps" 
     
-                }
+               // }
+            }
+        }
+        
+                stage('Docker') {
+                 steps {
+                     sh "docker build -t bvsaikiran/tomcatapp ."
             }
         }
 
