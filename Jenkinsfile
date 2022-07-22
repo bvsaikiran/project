@@ -40,7 +40,7 @@ pipeline {
            stage('Deploy') {
             steps {
                 
-                sh "sudo wget --user=admin --password=admin123 http://18.133.28.224:8081/repository/maven-releases/com/web/cal/WebAppCal/1.2.8/WebAppCal-1.2.8.war -P /home/ec2-user"
+                sh "sudo wget --user=admin --password=admin123 http://18.133.28.224:8081/repository/maven-releases/com/web/cal/WebAppCal/1.2.7/WebAppCal-1.2.7.war -P /home/ec2-user"
       
                 //sshagent(['deploy_user']) {
                     
