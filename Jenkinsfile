@@ -55,6 +55,16 @@ pipeline {
                      sh "docker build -t bvsaikiran/tomcatapp ."
             }
         }
+        
+        stage("Docker Login"){
+        withCredentials([string(credentialsId: 'Docker_Hub', variable: 'PASSWORD')]) {
+            sh 'docker login -u bvsaikiran -p $PASSWORD'
+        }
+    } 
+        
+        stage("Push Image to Docker Hub"){
+        sh 'docker push  bvsaikiran/tomcatapp'
+    }
 
     }    
 }
