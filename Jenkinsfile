@@ -24,7 +24,7 @@ pipeline {
  
         stage('Sonar') {
             steps {
-                sh "mvn sonar:sonar -Dsonar.host.url=http://13.41.222.67:9000 -Dsonar.login=3f93384c6a8b7d9f9e321dbe416407f2357e8656"
+                sh "mvn sonar:sonar -Dsonar.host.url=http://35.178.175.118:9000 -Dsonar.login=3f93384c6a8b7d9f9e321dbe416407f2357e8656"
             }
         }
 
@@ -40,7 +40,7 @@ pipeline {
            stage('Deploy') {
             steps {
                 
-                sh "sudo wget --user=admin --password=admin123 http://18.133.28.224:8081/repository/maven-releases/com/web/cal/WebAppCal/1.2.7/WebAppCal-1.2.7.war -P /home/ec2-user"
+                sh "sudo wget --user=admin --password=admin123 http://13.41.191.72:8081/repository/maven-releases/com/web/cal/WebAppCal/1.2.4/WebAppCal-1.2.4.war -P /home/ec2-user"
       
                 //sshagent(['deploy_user']) {
                     
