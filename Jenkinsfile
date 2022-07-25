@@ -40,7 +40,7 @@ pipeline {
            stage('Deploy') {
             steps {
                 
-                sh "sudo wget --user=admin --password=admin123 http://13.41.191.72:8081/repository/maven-releases/com/web/cal/WebAppCal/1.2.3/WebAppCal-1.2.3.war -P /home/ec2-user"
+                sh "sudo wget --user=admin --password=admin123 http://3.8.145.71:8081/repository/maven-releases/com/web/cal/WebAppCal/1.2.2/WebAppCal-1.2.2.war -P ."
       
                 //sshagent(['deploy_user']) {
                     
@@ -52,7 +52,7 @@ pipeline {
         
                 stage('Docker') {
                  steps {
-                     sh "docker build -t bvsaikiran/tomcatapp ."
+                     sh "docker build -t bvsaikiran/tomcatapp11 ."
             }
         }
         
@@ -63,7 +63,7 @@ pipeline {
     } 
         
         stage("Push Image to Docker Hub"){
-        sh 'docker push  bvsaikiran/tomcatapp'
+        sh 'docker push  bvsaikiran/tomcatapp11'
     }
 
     }    
