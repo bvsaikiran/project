@@ -1,3 +1,3 @@
 FROM tomcat:8.0-alpine
 
-COPY  *.war /usr/local/tomcat/webapps
+COPY  WebAppCal-1.3.6.war /usr/local/tomcat/webapps
